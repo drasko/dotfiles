@@ -44,7 +44,7 @@ if has('syntax') && !exists('g:syntax_on')
 endif
 
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 
 """
 """ Ctrl-P
