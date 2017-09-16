@@ -3,7 +3,7 @@ set nocompatible
 
 " load plugin manager
 if empty(glob("~/.vim/autoload/plug.vim"))
-    execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+	execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.github.com/junegunn/vim-plug/master/plug.vim'
 endif
 
 " load bundles
@@ -12,10 +12,12 @@ if filereadable(expand("~/.dotfiles/vim/bundles.vim"))
 endif
 
 if has('gui_running')
-    set guifont=Inconsolata-g\ for\ Powerline\ 12
-    set guioptions-=m
+    "set guifont=Inconsolata-g\ for\ Powerline\ 12
+    "set guioptions-=m
     set guioptions-=T
-    set guioptions-=r
+    "set guioptions-=r
+    colorscheme solarized
+    set lines=35 columns=100
 endif
 
 " Leaders
@@ -26,7 +28,7 @@ endif
 set timeout timeoutlen=1000 ttimeoutlen=500
 
 set laststatus=2                  " always show the status line
-set cmdheight=2                   " and use a two-line tall status line
+"set cmdheight=2                   " and use a two-line tall status line
 set showcmd                       " show the command
 set noshowmode                    " don't show the mode, vim-airline will do that for us
 set autoindent                    " turns it on
@@ -37,13 +39,11 @@ set wrap                          " use line wrapping
 set textwidth=79                  " at column 79
 set ruler                         " display current cursor position
 set showmatch                     " show matching brackets
-if exists("&relativenumber")
-  set relativenumber              " use relative line numbers
-endif
 set number                        " except for the current line - absolute number there
 set backspace=indent,eol,start    " make backspace behave in a sane manner
+set mouse=a                       " enable mouse support
 set mousehide                     " hide mouse when typing
-set foldenable                    " enable code folding
+"set foldenable                    " enable code folding
 set history=1000
 set ffs=unix,mac,dos              " default file types
 set autoread                      " automatically update file when editted outside of vim
@@ -58,30 +58,6 @@ set formatoptions+=o              " automatically continue comments when hitting
 set formatoptions+=q              " allow formating of comments with 'gq'
 set formatoptions+=n              " recognize numbered lists
 set formatoptions+=l              " don't break long lines that were already there
-
-" disable arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
-" use <C>hjkl to switch between splits
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <C-h> <C-w>h
-
-" Move line(s) up or down via C-j and C-k respectively
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <ESC>:m .+1<CR>==gi
-inoremap <C-k> <ESC>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " encoding
 set termencoding=utf-8
@@ -134,8 +110,6 @@ if has("autocmd")
   autocmd WinEnter * set cursorline
 endif
 
-" Map escape to jj -- much faster to reach and type
-imap jj <esc>
 
 " Searching
 set incsearch           " use incremental search
@@ -147,9 +121,6 @@ set smartcase           " ignore case if search string is all lower case, case-s
 " Splits
 nnoremap <Leader>v <C-w>v<C-w>l   " open a vertical split and switch to it (,v)
 nnoremap <Leader>h <C-w>s<C-w>j   " open a horizontal split and switch to it (,h)
-
-" open vimrc in new tab for editing
-nmap <Leader>ev :tabedit $MYVIMRC<cr>
 
 " reload init.vim
 map <silent> <Leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
