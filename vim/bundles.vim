@@ -23,6 +23,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'zah/nim.vim'
 
 " utilities
 Plug 'ctrlpvim/ctrlp.vim'
