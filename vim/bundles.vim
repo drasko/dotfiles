@@ -14,6 +14,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'fholgado/minibufexpl.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'flazz/vim-colorschemes'
 
 " programming
 Plug 'Shougo/neocomplete.vim'
@@ -24,6 +25,7 @@ Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'zah/nim.vim'
+Plug 'tomlion/vim-solidity'
 
 " utilities
 Plug 'ctrlpvim/ctrlp.vim'
