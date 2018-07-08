@@ -26,6 +26,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'zah/nim.vim'
 Plug 'tomlion/vim-solidity'
+Plug 'vvkmnn/vim-vyper'
 
 " utilities
 Plug 'ctrlpvim/ctrlp.vim'
